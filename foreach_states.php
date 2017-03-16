@@ -97,14 +97,23 @@ foreach ($multiWordStates as $name) {
 	echo $name . PHP_EOL;
 }
 
+echo "-----------------------" . PHP_EOL;
+
+// Push states with a direction into an array
+$directionStates = [];
+$directions = ['North', 'East', 'South', 'West']; 
 
 
+foreach ($states as $abb => $name) {
+	foreach ($directions as $direction) {
+		if (strpos($name, $direction) !== false) {
+			array_push($directionStates, $name);
+		}
+	}	
+}
 
-// use a foreach to construct a new array containing states with names that are more than one word.
-	// call the array $statesWithMoreThanOneWordNames
-	// echo "These are the states with more than one word in their name"
-	// then echo each state name below
+// Show all direction name states
+foreach ($directionStates as $name) {
+	echo $name . PHP_EOL;
+}
 
-// use a foreach to construct a new array of all the states with "North" "East" "South" or "West"
-	// call the array $arrayOfCardinalStates
-	// echo "These are states with north, south, east, or west in their name"
