@@ -65,6 +65,7 @@ foreach ($states as $abb => $name) {
 
 echo "-----------------------" . PHP_EOL;
 
+// Show states without an 'a' in name
 foreach ($states as $abb => $name) {
 	if(strpos($name, 'a') == false) {
 		echo "$abb - $name" . PHP_EOL;
@@ -73,8 +74,37 @@ foreach ($states as $abb => $name) {
 
 echo "-----------------------" . PHP_EOL;
 
+//Show states starting with a vowel
 foreach ($states as $abb => $name) {
 	if ($abb[0] == 'A' || $abb[0] == 'E' || $abb[0] == 'I' || $abb[0] == 'O' || $abb[0] == 'U') {
 		echo "$abb - $name" . PHP_EOL;
 	}
 }
+
+echo "-----------------------" . PHP_EOL;
+
+// Push multi word states into an array
+$multiWordStates = [];
+
+foreach ($states as $abb => $name) {
+	if(strpos($name, ' ')) {
+		array_push($multiWordStates, $name);
+	}
+}
+
+//Show all the multi word states
+foreach ($multiWordStates as $name) {
+	echo $name . PHP_EOL;
+}
+
+
+
+
+// use a foreach to construct a new array containing states with names that are more than one word.
+	// call the array $statesWithMoreThanOneWordNames
+	// echo "These are the states with more than one word in their name"
+	// then echo each state name below
+
+// use a foreach to construct a new array of all the states with "North" "East" "South" or "West"
+	// call the array $arrayOfCardinalStates
+	// echo "These are states with north, south, east, or west in their name"
