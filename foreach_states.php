@@ -150,20 +150,3 @@ foreach ($states as $abb => $name) {
 foreach ($statesStartingAndEndingWithVowels as $name) {
 	echo $name . PHP_EOL;
 }
-
-
-
-
-
-
-
-
-
-
-// Exercises Part 2
-// Use a foreach to make a new array containing states that start with and end with vowels
-	// call the array $statesStartingAndEndingWithVowels
-	// echo "These are states starting and ending with vowels"
-	// then echo each state name in this new array
-
-
