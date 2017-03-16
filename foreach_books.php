@@ -24,18 +24,11 @@ $books = array(
 );
 
 foreach ($books as $book => $value) {
-	echo $book . PHP_EOL;
-	foreach ($value as $key => $secondvalue) {
-		echo $key . ": " . $secondvalue . PHP_EOL;
+	if ($value['published'] > 1950) {
+		echo $book . PHP_EOL;
+		foreach ($value as $key => $secondvalue) {
+			echo $key . ": " . $secondvalue . PHP_EOL;
+		}
+		echo "-------------------------" . PHP_EOL;
 	}
-	echo "-------------------------" . PHP_EOL;
 }
-
-
-
-
-// Create a file named foreach_books.php in you exercises directory. Commit each step and push to GitHub.
-
-// Construct a loop that iterates through each book and then each book's keys and values. Have it output the book's title, then list the key value pairs for the data about each book.
-
-// Update your loop to only show books that were written after 1950.
