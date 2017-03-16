@@ -57,12 +57,19 @@ $states = [
   ];
 
 // Show only states with 'X' in the name
+
+echo "-----------------------" . PHP_EOL;
+echo "States that contain 'X'" . PHP_EOL;
+echo "-----------------------" . PHP_EOL;
+
 foreach ($states as $abb => $name) {
 	if(strpos($name, 'x')) {
 		echo "$abb - $name" . PHP_EOL;
 	}
 }
 
+echo "-----------------------" . PHP_EOL;
+echo "States that do not contain an 'A'" . PHP_EOL;
 echo "-----------------------" . PHP_EOL;
 
 // Show states without an 'a' in name
@@ -73,6 +80,8 @@ foreach ($states as $abb => $name) {
 }
 
 echo "-----------------------" . PHP_EOL;
+echo "States that begin with a vowel" . PHP_EOL;
+echo "-----------------------" . PHP_EOL;
 
 //Show states starting with a vowel
 foreach ($states as $abb => $name) {
@@ -81,6 +90,8 @@ foreach ($states as $abb => $name) {
 	}
 }
 
+echo "-----------------------" . PHP_EOL;
+echo "States that contain multiple words" . PHP_EOL;
 echo "-----------------------" . PHP_EOL;
 
 // Push multi word states into an array
@@ -97,6 +108,8 @@ foreach ($multiWordStates as $name) {
 	echo $name . PHP_EOL;
 }
 
+echo "-----------------------" . PHP_EOL;
+echo "States that contain a direction" . PHP_EOL;
 echo "-----------------------" . PHP_EOL;
 
 // Push states with a direction into an array
@@ -116,4 +129,41 @@ foreach ($states as $abb => $name) {
 foreach ($directionStates as $name) {
 	echo $name . PHP_EOL;
 }
+
+echo "-----------------------" . PHP_EOL;
+echo "States that start and end with a vowel" . PHP_EOL;
+echo "-----------------------" . PHP_EOL;
+
+$statesStartingAndEndingWithVowels = [];
+
+// Push states starting and ending with vowels into an array
+
+foreach ($states as $abb => $name) {
+	$firstIsVowel = ($abb[0] == 'A' || $abb[0] == 'E' || $abb[0] == 'I' || $abb[0] == 'O' || $abb[0] == 'U');
+	$lastIsVowel = (substr($name, -1)) == 'a' || substr($name, -1) == 'e' || substr($name, -1) == 'i' || substr($name, -1) == 'o' || substr($name, -1) == 'u';
+	if ($firstIsVowel && $lastIsVowel) {
+		array_push($statesStartingAndEndingWithVowels, $name);
+	}
+}
+
+// Show all states that start and end with vowels
+foreach ($statesStartingAndEndingWithVowels as $name) {
+	echo $name . PHP_EOL;
+}
+
+
+
+
+
+
+
+
+
+
+// Exercises Part 2
+// Use a foreach to make a new array containing states that start with and end with vowels
+	// call the array $statesStartingAndEndingWithVowels
+	// echo "These are states starting and ending with vowels"
+	// then echo each state name in this new array
+
 
