@@ -82,7 +82,12 @@ foreach ($companies as $company => $people) {
 
 arsort($newCompany);
 
-print_r($newCompany);
+foreach ($newCompany as $company => $value) {
+    echo $company . PHP_EOL;
+}
+
+
+// print_r($newCompany);
 
 // Add code to output the $companies array in its current form.
 
