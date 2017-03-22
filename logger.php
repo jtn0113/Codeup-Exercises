@@ -7,6 +7,7 @@ function logMessage($logLevel, $message)
 	$dateWithTime = date("Y-m-d H:i:s");
     $handle = fopen("log-$date.log", 'a');
     fwrite($handle, $dateWithTime . " " . $logLevel . " " . $message);
+    fclose($handle);
 }
 
 function logInfo() {
