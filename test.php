@@ -1,16 +1,14 @@
+<?php 
+$numbers = ['12', '21', '1.22221'];
 
-
-for ($i = 1; $i <= 15 ; $i+) {
-	if ($i / 15 == 0) {
-		echo "FizzBuzz" . PHP_EOL;
-	} else if ($i / 3 == 0) {
-		echo "Fizz" . PHP_EOL;
-	} else if ($i / 5 == 0) {
-		echo "Buzz" . PHP_EOL;
-	} else {
-		echo $i . PHP_EOL;
+function toNumberArray($stringArray){
+	foreach ($stringArray as $number) {
+		$number = intval($number);
+		$number = round($number, 3);
+		echo $number;
 	}
+	return $stringArray;
 }
 
-
+print_r(toNumberArray($numbers));
 
